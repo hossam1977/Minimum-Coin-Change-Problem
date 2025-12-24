@@ -1,16 +1,15 @@
 Optimized_Coin_Change(coins, amount)
 
-1.  Create an array DP of size (amount + 1)
-2.  Initialize DP[0] = 0
-3.  Fill all other DP entries with Infinity
-4.  
-5.  FOR i FROM 1 TO amount DO:
-6.      FOR each coin in coins DO:
-7.          IF coin <= i THEN
-8.              // استخدم النتيجة المخزنة مسبقاً للمبلغ المتبقي
-9.              DP[i] = MIN(DP[i], DP[i - coin] + 1)
-10. 
-11. IF DP[amount] == Infinity THEN
-12.     RETURN -1
-13. ELSE
-14.     RETURN DP[amount]
+  Create an array DP of size (amount + 1)
+  Initialize DP[0] = 0
+  Fill all other DP entries with Infinity
+  
+  FOR i FROM 1 TO amount DO:
+      FOR each coin in coins DO:
+          IF coin <= i THEN
+              DP[i] = MIN(DP[i], DP[i - coin] + 1)
+ 
+ IF DP[amount] == Infinity THEN
+     RETURN -1
+ ELSE
+     RETURN DP[amount]
