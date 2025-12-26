@@ -1,16 +1,18 @@
 
-Naive_Coin_Change(coins, amount)
+Naive_Coin_Change(coins, amount):
 
-  IF amount == 0 THEN
-      RETURN 0
-  IF amount < 0 THEN
-      RETURN Infinity
- 
-  min_coins = Infinity
-  
-  FOR each coin in coins DO:
-      result = Naive_Coin_Change(coins, amount - coin)
-     IF result != Infinity THEN
-         min_coins = MIN(min_coins, result + 1)
+    IF amount == 0 THEN
+        RETURN 0
 
- RETURN min_coins
+    IF amount < 0 THEN
+        RETURN Infinity
+
+    min_coins = Infinity
+
+    FOR each coin in coins DO
+        result = Naive_Coin_Change(coins, amount - coin)
+
+        IF result != Infinity THEN
+            min_coins = MIN(min_coins, result + 1)
+
+    RETURN min_coins
